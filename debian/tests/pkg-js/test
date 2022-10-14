@@ -1,0 +1,5 @@
+mkdir -p node_modules/@rollup
+ln -s ../../packages/commonjs node_modules/@rollup/plugin-commonjs
+tape packages/commonjs/test/test.js
+tape packages/commonjs/test/form.js
+rm -rf node_modules

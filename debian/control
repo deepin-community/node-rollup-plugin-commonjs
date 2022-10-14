@@ -1,0 +1,48 @@
+Source: node-rollup-plugin-commonjs
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Julien Puydt <jpuydt@debian.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends: debhelper-compat (= 13)
+ , mocha <!nocheck>
+ , node-acorn (>= 6~)
+ , node-babel7 <!pkg.node-rollup-plugin-commonjs.transpilebuble>
+ , node-graceful-fs
+ , node-magic-string
+ , node-resolve
+ , node-rollup-plugin-babel (>= 4.4~) <!pkg.node-rollup-plugin-commonjs.transpilebuble>
+ , node-rollup-plugin-buble <pkg.node-rollup-plugin-commonjs.transpilebuble>
+ , node-rollup-plugin-json
+ , node-rollup-plugin-node-resolve (>= 9) <!nocheck>
+ , node-rollup-pluginutils (>= 2.3.3-5)
+ , node-source-map <!nocheck>
+ , node-source-map-support <!nocheck>
+ , node-tape <!nocheck>
+ , nodejs (>= 10)
+ , dh-sequence-nodejs
+ , rollup (>= 1~)
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/js-team/node-rollup-plugin-commonjs
+Vcs-Git: https://salsa.debian.org/js-team/node-rollup-plugin-commonjs.git
+Homepage: https://github.com/rollup/plugins
+Rules-Requires-Root: no
+
+Package: node-rollup-plugin-commonjs
+Architecture: all
+Depends: ${misc:Depends}
+ , node-commondir
+ , node-estree-walker
+ , node-glob
+ , node-is-reference
+ , node-magic-string (>= 0.22.4)
+ , node-resolve (>= 1.5.0)
+ , node-rollup-pluginutils (>= 3.1.0)
+Recommends: rollup
+Enhances: rollup
+Breaks: rollup (<< 0.68.2+ds~)
+Description: Node.js plugin for rollup to convert CommonJS modules to ES6
+ This plugin for rollup will convert modules written in CommonJS to ES6 so they
+ can be included in a Rollup bundle.
+ .
+ Node.js is an event-based server-side JavaScript engine.

@@ -1,0 +1,268 @@
+node-rollup-plugin-commonjs (17.0.0+repack-2) unstable; urgency=medium
+
+  * Team upload
+  * Reupload to unstable (node-react was fixed and rebuild of all other reverse
+    dependencies passed)
+
+ -- Pirate Praveen <praveen@debian.org>  Sat, 02 Jan 2021 22:26:27 +0530
+
+node-rollup-plugin-commonjs (17.0.0+repack-1) experimental; urgency=medium
+
+  * Team upload
+  * Drop legacy version component
+  * New upstream version 17.0.0+repack
+  * Refresh patches (drop unused patches)
+  * Drop debian/docs (README.md is about the monorepo)
+  * Drop legacy test and build steps
+
+ -- Pirate Praveen <praveen@debian.org>  Sat, 02 Jan 2021 17:08:17 +0530
+
+node-rollup-plugin-commonjs (15.1.0+~9.3.4-2) unstable; urgency=medium
+
+  * Team upload
+  * Drop legacy node-resolve plugin usage
+  * Bump Standards-Version to 4.5.1 (no changes needed)
+
+ -- Pirate Praveen <praveen@debian.org>  Wed, 30 Dec 2020 21:37:36 +0530
+
+node-rollup-plugin-commonjs (15.1.0+~9.3.4-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 15.1.0+~9.3.4
+  * Refresh patches
+  * Update test
+  * Fix copyright
+
+ -- Xavier Guimard <yadd@debian.org>  Sun, 11 Oct 2020 08:26:36 +0200
+
+node-rollup-plugin-commonjs (15.0.0+~9.3.4-3) unstable; urgency=medium
+
+  * Team upload
+  * Use dh-sequence-nodejs
+  * Update test patch for rollup 2 compat
+
+ -- Xavier Guimard <yadd@debian.org>  Mon, 05 Oct 2020 06:07:05 +0200
+
+node-rollup-plugin-commonjs (15.0.0+~9.3.4-2) unstable; urgency=medium
+
+  * Team upload
+  * Back to unstable after successful tests
+
+ -- Xavier Guimard <yadd@debian.org>  Wed, 23 Sep 2020 19:51:03 +0200
+
+node-rollup-plugin-commonjs (15.0.0+~9.3.4-1) experimental; urgency=medium
+
+  * Team upload
+
+  [ Julien Puydt ]
+  * New upstream release.
+  * Fix link to index.js (thanks to Nicolas Mora) (Closes: #942216)
+
+  [ Xavier Guimard ]
+  * Update homepage to https://github.com/rollup/plugins, Update upstream name
+    to @rollup/plugin-commonjs
+  * Update d/watch: embed legacy rollup-plugin-commonjs as component
+  * New upstream version 15.0.0+~9.3.4
+  * Update build
+  * Refresh patches
+  * Update legacy test patch
+  * Fix DEBUILD_OPTIONS variable name
+  * Enable upstream test using tape instead of ava
+  * Add lintian overrides
+  * Bump debhelper compatibility level to 13
+
+ -- Xavier Guimard <yadd@debian.org>  Fri, 18 Sep 2020 08:50:07 +0200
+
+node-rollup-plugin-commonjs (10.0.1+really.9.2.0-12) unstable; urgency=medium
+
+  * Team upload
+  * Bump debhelper compatibility level to 13
+  * Fix test for rollup ≥ 1.32.1
+
+ -- Xavier Guimard <yadd@debian.org>  Mon, 21 Sep 2020 16:27:58 +0200
+
+node-rollup-plugin-commonjs (10.0.1+really.9.2.0-11) unstable; urgency=medium
+
+  * Team upload
+
+  [ Xavier Guimard ]
+  * Declare compliance with policy 4.5.0
+  * Add "Rules-Requires-Root: no"
+
+  [ Pirate Praveen ]
+  * Build with babel 7
+
+ -- Pirate Praveen <praveen@debian.org>  Sat, 02 May 2020 12:29:32 +0530
+
+node-rollup-plugin-commonjs (10.0.1+really.9.2.0-10) unstable; urgency=medium
+
+  * Add build depends for fixing mocha
+
+ -- Bastien Roucariès <rouca@debian.org>  Mon, 24 Feb 2020 00:41:09 +0100
+
+node-rollup-plugin-commonjs (10.0.1+really.9.2.0-9) unstable; urgency=medium
+
+  * Fix build profile logic
+
+ -- Bastien Roucariès <rouca@debian.org>  Sun, 23 Feb 2020 23:57:38 +0100
+
+node-rollup-plugin-commonjs (10.0.1+really.9.2.0-8) unstable; urgency=medium
+
+  * Team upload
+  * Do not transpile
+  * Run mocha
+  * Fix testsuite
+
+ -- Bastien Roucariès <rouca@debian.org>  Sun, 23 Feb 2020 23:15:16 +0100
+
+node-rollup-plugin-commonjs (10.0.1+really.9.2.0-7) unstable; urgency=medium
+
+  * In order to avoid error in resolve transpile with babel6
+
+ -- Bastien Roucariès <rouca@debian.org>  Sat, 22 Feb 2020 01:27:39 +0100
+
+node-rollup-plugin-commonjs (10.0.1+really.9.2.0-6) unstable; urgency=medium
+
+  * Remove dangling symlink
+
+ -- Bastien Roucariès <rouca@debian.org>  Sat, 22 Feb 2020 00:57:21 +0100
+
+node-rollup-plugin-commonjs (10.0.1+really.9.2.0-5) unstable; urgency=medium
+
+  * Team upload
+  * Do not transpile (avoid circular deps) but depends on node (>= 10)
+  * Depends on acorn (>= 6)
+
+ -- Bastien Roucariès <rouca@debian.org>  Sat, 22 Feb 2020 00:41:03 +0100
+
+node-rollup-plugin-commonjs (10.0.1+really.9.2.0-4) unstable; urgency=medium
+
+  * Team upload
+  * Reupload to unstable (rollup 0.56 is in unstable now)
+  * Bump Standards-Version to 4.4.1 (no changes needed)
+
+ -- Pirate Praveen <praveen@debian.org>  Thu, 10 Oct 2019 11:59:42 +0530
+
+node-rollup-plugin-commonjs (10.0.1+really.9.2.0-3) experimental; urgency=medium
+
+  * Team upload
+  * Add node-rollup-plugin-buble as build dependency (rollup dropped this
+    dependency from 0.56.3-1)
+  * Drop patch 0001-remove-parse.patch (fixed in 0.56)
+  * Switch to pkg-js-tools auto install
+
+ -- Pirate Praveen <praveen@debian.org>  Tue, 01 Oct 2019 00:01:02 +0530
+
+node-rollup-plugin-commonjs (10.0.1+really.9.2.0-2) unstable; urgency=medium
+
+  * Team upload
+  * Be lax with acorn
+
+ -- Bastien Roucariès <rouca@debian.org>  Sat, 21 Sep 2019 00:30:44 +0200
+
+node-rollup-plugin-commonjs (10.0.1+really.9.2.0-1) unstable; urgency=medium
+
+  * Team upload
+  * Downgrade to 9.2.0 due to rollup breakage
+  * Bump debhelper compatibility level to 12
+  * Declare compliance with policy 4.4.0
+  * Add debian/gbp.conf
+  * Add upstream/metadata
+
+ -- Xavier Guimard <yadd@debian.org>  Sun, 21 Jul 2019 13:48:51 +0200
+
+node-rollup-plugin-commonjs (10.0.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Refresh patches (dropping one: upstream uses babel now).
+  * Bump std-vers to 4.4.0.
+  * Update deps.
+
+ -- Julien Puydt <jpuydt@debian.org>  Wed, 17 Jul 2019 16:06:31 +0200
+
+node-rollup-plugin-commonjs (9.2.0-2) unstable; urgency=medium
+
+  * Team upload
+  * Fix parse error. Note that this patch should be reverted
+    with node-rollup (>= 0.56).
+  * Transpile with babel if needed
+
+ -- Bastien Roucariès <rouca@debian.org>  Mon, 31 Dec 2018 00:06:06 +0100
+
+node-rollup-plugin-commonjs (9.2.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sat, 13 Oct 2018 22:37:30 +0200
+
+node-rollup-plugin-commonjs (9.1.8-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump std-ver to 4.2.1.
+  * Bumped depends versions following upstream.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sat, 13 Oct 2018 22:37:12 +0200
+
+node-rollup-plugin-commonjs (9.1.3-1) unstable; urgency=medium
+
+  * New usptream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Tue, 01 May 2018 14:44:36 +0200
+
+node-rollup-plugin-commonjs (9.0.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Wed, 07 Mar 2018 10:54:50 +0100
+
+node-rollup-plugin-commonjs (8.3.0-2) unstable; urgency=medium
+
+  * Use rollup, like upstream.
+  * Bum dh compat to 11.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Sun, 25 Feb 2018 00:40:43 +0100
+
+node-rollup-plugin-commonjs (8.3.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update packaging:
+    - Bump std-ver to 4.1.3.
+    - Update dates in d/copyright.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Tue, 30 Jan 2018 13:58:08 +0100
+
+node-rollup-plugin-commonjs (8.2.4-3) unstable; urgency=medium
+
+  * Update packaging:
+    - Bump std-ver to 4.1.2.0.
+    - Declare Enhances: rollup (Closes: #883956).
+    - Use https in d/copyright's Format.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Sun, 10 Dec 2017 09:45:32 +0100
+
+node-rollup-plugin-commonjs (8.2.4-2) unstable; urgency=medium
+
+  * Improve d/rules (Closes: #879923).
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Fri, 27 Oct 2017 12:53:01 +0200
+
+node-rollup-plugin-commonjs (8.2.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump std-ver to 4.1.1.
+  * Move to section javascript instead of web.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Sun, 22 Oct 2017 09:24:08 +0200
+
+node-rollup-plugin-commonjs (8.2.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Improved exports.
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Tue, 19 Sep 2017 14:49:08 +0200
+
+node-rollup-plugin-commonjs (8.2.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #872328).
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Wed, 16 Aug 2017 13:08:51 +0200
