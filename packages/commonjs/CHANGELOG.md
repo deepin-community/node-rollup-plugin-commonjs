@@ -1,5 +1,297 @@
 # @rollup/plugin-commonjs ChangeLog
 
+## v25.0.4
+
+_2023-08-11_
+
+### Updates
+
+- docs: update docs [#1545](https://github.com/rollup/plugins/pull/1545)
+
+## v25.0.3
+
+_2023-07-15_
+
+### Bugfixes
+
+- fix: preserve `this` reference in the child class [#1537](https://github.com/rollup/plugins/pull/1537)
+
+## v25.0.2
+
+_2023-06-19_
+
+### Bugfixes
+
+- fix: add classBodyDepth flag [#1507](https://github.com/rollup/plugins/pull/1507)
+
+## v25.0.1
+
+_2023-06-10_
+
+### Bugfixes
+
+- fix: change dynamicRequireRoot to normalizedDynamicRequireRoot && tweak related tests [#1508](https://github.com/rollup/plugins/pull/1508)
+
+## v25.0.0
+
+_2023-05-12_
+
+### Breaking Changes
+
+- fix: dynamic require root check was broken in some cases [#1461](https://github.com/rollup/plugins/pull/1461)
+
+## v24.1.0
+
+_2023-04-11_
+
+### Features
+
+- feat: Do not use getters for module.exports [#1455](https://github.com/rollup/plugins/pull/1455)
+
+## v24.0.1
+
+_2023-01-20_
+
+### Bugfixes
+
+- fix: types should come first in exports [#1403](https://github.com/rollup/plugins/pull/1403)
+
+## v24.0.0
+
+_2022-12-18_
+
+### Breaking Changes
+
+- fix: check if defaultIsModuleExports is auto for getDefaultExportFromCjs [#1358](https://github.com/rollup/plugins/pull/1358)
+
+## v23.0.7
+
+_2022-12-17_
+
+### Bugfixes
+
+- fix: produce code which works when \_\_esModule is already defined [#1379](https://github.com/rollup/plugins/pull/1379)
+
+## v23.0.6
+
+_2022-12-17_
+
+### Bugfixes
+
+- fix: update magic-string [#1373](https://github.com/rollup/plugins/pull/1373)
+
+## v23.0.5
+
+_2022-12-15_
+
+### Bugfixes
+
+- fix: resolve export exports not found [#1363](https://github.com/rollup/plugins/pull/1363)
+
+## v23.0.4
+
+_2022-12-07_
+
+### Bugfixes
+
+- fix: declaration tag @default for ignoreTryCatch + fix some typos [#1370](https://github.com/rollup/plugins/pull/1370)
+
+## v23.0.3
+
+_2022-11-27_
+
+### Bugfixes
+
+- fix: correctly wrap a default class export from cjs module [#1350](https://github.com/rollup/plugins/pull/1350)
+
+## v23.0.2
+
+_2022-10-21_
+
+### Updates
+
+- chore: update rollup dependencies ([3038271](https://github.com/rollup/plugins/commit/303827191ede6b2e4eade96c6968ed16a587683f))
+
+## v23.0.1
+
+_Skipped for repo rebase_
+
+## v23.0.0
+
+_2022-10-09_
+
+### Breaking Changes
+
+- fix: prepare for Rollup 3 [#1300](https://github.com/rollup/plugins/pull/1300)
+
+## v22.0.2
+
+_2022-08-05_
+
+### Bugfixes
+
+- fix: Exclude multi-line template strings from indent (#1229)
+
+## v22.0.1
+
+_2022-06-24_
+
+### Bugfixes
+
+- fix: Only proxy detected commonjs entry points (#1180)
+
+## v22.0.0
+
+_2022-04-24_
+
+### Breaking Changes
+
+- fix: add heuristic to deoptimize requires after calling imported function (requires rollup@2.68.0) (#1038)
+- feat: reimplement dynamic import handling (requires Node 12, no longer supports require.cache) (#1038)
+
+### Bugfixes
+
+- fix: support CJS modules re-exporting transpiled ESM modules (#1165)
+- fix: Warn when plugins do not pass options to resolveId (#1038)
+- fix: Do not change semantics when removing requires in if statements (#1038)
+- fix: handle external dependencies when using the cache (#1038)
+- fix: proxy all entries to not break legacy polyfill plugins (#1038)
+- fix: use correct version and add package exports (#1038)
+- fix: validate node-resolve peer version (#1038)
+- fix: inject module name into dynamic require function (#1038)
+- fix: do not transform "typeof exports" for mixed modules (#1038)
+- fix: attach correct plugin meta-data to commonjs modules (#1038)
+
+### Features
+
+- feat: expose plugin version (#1038)
+- feat: throw for dynamic requires from outside the configured root (#1038)
+- feat: add dynamicRequireRoot option (#1038)
+- feat: auto-detect conditional requires (#1038)
+- feat: limit ignoreTryCatch to external requires (#1038)
+- feat: make namespace callable when requiring ESM with function default (#1038)
+- feat: Infer type for unidentified modules (#1038)
+- feat: automatically wrap cyclic modules (#1038)
+- feat: add strictRequires option to wrap modules (#1038)
+
+### Updates
+
+- refactor: deconflict helpers only once globals are known (#1038)
+
+## v21.1.0
+
+_2022-04-15_
+
+### Features
+
+- feat: make defaultIsModuleExports as funtion to config defaultIsModuleExports for each source (#1052)
+
+## v21.0.3
+
+_2022-03-27_
+
+### Updates
+
+- docs: sync required rollup version (#1118)
+
+## v21.0.2
+
+_2022-02-23_
+
+### Updates
+
+- chore: transpile dynamic helper to ES5 (#1082)
+
+## v21.0.1
+
+_2021-10-19_
+
+### Bugfixes
+
+- fix: pass on isEntry and custom resolve options (#1018)
+
+## v21.0.0
+
+_2021-10-01_
+
+### Breaking Changes
+
+- fix: use safe default value for ignoreTryCatch (#1005)
+
+## v20.0.0
+
+_2021-07-30_
+
+### Breaking Changes
+
+- fix: Correctly infer module name for any separator (#924)
+
+## v19.0.2
+
+_2021-07-26_
+
+### Bugfixes
+
+- fix convert module.exports with `__esModule` property(#939) (#942)
+
+## v19.0.1
+
+_2021-07-15_
+
+### Bugfixes
+
+- fix: short-circuit to actual module entry point when using circular ref through a different entry (#888)
+
+## v19.0.0
+
+_2021-05-07_
+
+### Breaking Changes
+
+- feat!: Add support for circular dependencies (#658)
+
+## v18.1.0
+
+_2021-05-04_
+
+### Bugfixes
+
+- fix: idempotence issue (#871)
+
+### Features
+
+- feat: Add `defaultIsModuleExports` option to match Node.js behavior (#838)
+
+## v18.0.0
+
+_2021-03-26_
+
+### Breaking Changes
+
+- feat!: Add ignore-dynamic-requires option (#819)
+
+### Bugfixes
+
+- fix: `isRestorableCompiledEsm` should also trigger code transform (#816)
+
+## v17.1.0
+
+_2021-01-29_
+
+### Bugfixes
+
+- fix: correctly replace shorthand `require` (#764)
+
+### Features
+
+- feature: load dynamic commonjs modules from es `import` (#766)
+- feature: support cache/resolve access inside dynamic modules (#728)
+- feature: allow keeping `require` calls inside try-catch (#729)
+
+### Updates
+
+- chore: fix lint error (#719)
+
 ## v17.0.0
 
 _2020-11-30_

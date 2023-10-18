@@ -1,11 +1,11 @@
 /* eslint-disable global-require, import/no-dynamic-require, no-console */
 
-import { readdirSync } from 'fs';
+const { readdirSync } = require('fs');
 
-import test from 'ava';
-import { rollup } from 'rollup';
+const test = require('ava');
+const { rollup } = require('rollup');
 
-import { commonjs, getCodeMapFromBundle, runCodeSplitTest } from './helpers/util';
+const { commonjs, getCodeMapFromBundle, runCodeSplitTest } = require('./helpers/util');
 
 process.chdir(__dirname);
 
@@ -37,7 +37,7 @@ readdirSync('./fixtures/function').forEach((dir) => {
     );
 
     const bundle = await rollup(options);
-    const codeMap = await getCodeMapFromBundle(bundle);
+    const codeMap = await getCodeMapFromBundle(bundle, options.output || {});
     if (config.show || config.solo) {
       console.error();
       for (const chunkName of Object.keys(codeMap)) {

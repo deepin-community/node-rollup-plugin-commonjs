@@ -1,0 +1,17 @@
+Description: rollup 2 compatibility
+ Tests are written for rollup 3
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2022-10-11
+
+--- a/packages/commonjs/test/helpers/util.js
++++ b/packages/commonjs/test/helpers/util.js
+@@ -67,7 +67,7 @@
+ 
+ async function getCodeMapFromBundle(bundle, options = {}) {
+   const generated = await bundle.generate({
+-    interop: 'compat',
++    interop: 'auto',
+     exports: 'auto',
+     format: 'cjs',
+     ...options

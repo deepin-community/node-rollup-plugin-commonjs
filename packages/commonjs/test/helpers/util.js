@@ -1,15 +1,19 @@
 const path = require('path');
 
-const commonjsPlugin = require('../../dist/index');
+const commonjsPlugin = require('../..');
 
 function commonjs(options) {
   delete require.cache[require.resolve('../..')];
   return commonjsPlugin(options);
 }
 
+function normalizePathSlashes(path) {
+  return path.replace(/\\/g, '/');
+}
+
 function requireWithContext(code, context) {
   const module = { exports: {} };
-  const contextWithExports = Object.assign({}, context, { module, exports: module.exports });
+  const contextWithExports = { ...context, module, exports: module.exports };
   const contextKeys = Object.keys(contextWithExports);
   const contextValues = contextKeys.map((key) => contextWithExports[key]);
   try {
@@ -31,7 +35,7 @@ function runCodeSplitTest(codeMap, t, configContext = {}) {
       return requireWithContext(
         code,
         // eslint-disable-next-line no-use-before-define
-        Object.assign({ require: requireFromOutputVia(outputId) }, context)
+        { require: requireFromOutputVia(outputId), ...context }
       );
     }
     // eslint-disable-next-line import/no-dynamic-require, global-require
@@ -48,13 +52,13 @@ function runCodeSplitTest(codeMap, t, configContext = {}) {
     );
   }
   const global = {};
-  const context = Object.assign({ t, global, globalThis: global }, configContext);
+  const context = { t, global, globalThis: global, ...configContext };
   let exports;
   try {
-    exports = requireWithContext(
-      codeMap[entryName],
-      Object.assign({ require: requireFromOutputVia('main.js') }, context)
-    );
+    exports = requireWithContext(codeMap[entryName], {
+      require: requireFromOutputVia('main.js'),
+      ...context
+    });
   } catch (error) {
     return { error, exports: error.exports };
   }
@@ -62,9 +66,12 @@ function runCodeSplitTest(codeMap, t, configContext = {}) {
 }
 
 async function getCodeMapFromBundle(bundle, options = {}) {
-  const generated = await bundle.generate(
-    Object.assign({ exports: 'auto', format: 'cjs' }, options)
-  );
+  const generated = await bundle.generate({
+    interop: 'compat',
+    exports: 'auto',
+    format: 'cjs',
+    ...options
+  });
   const codeMap = {};
   for (const chunk of generated.output) {
     codeMap[chunk.fileName] = chunk.code;
@@ -73,7 +80,7 @@ async function getCodeMapFromBundle(bundle, options = {}) {
 }
 
 async function getCodeFromBundle(bundle, customOptions = {}) {
-  const options = Object.assign({ exports: 'auto', format: 'cjs' }, customOptions);
+  const options = { exports: 'auto', format: 'cjs', ...customOptions };
   return (await bundle.generate(options)).output[0].code;
 }
 
@@ -87,5 +94,6 @@ module.exports = {
   executeBundle,
   getCodeFromBundle,
   getCodeMapFromBundle,
+  normalizePathSlashes,
   runCodeSplitTest
 };
