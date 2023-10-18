@@ -1,0 +1,3 @@
+@rollup/plugin-json
+@rollup/plugin-typescript
+source-map	test

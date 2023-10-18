@@ -1,0 +1,27 @@
+Description: don't validate versions
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2022-07-09
+
+--- a/packages/commonjs/src/index.js
++++ b/packages/commonjs/src/index.js
+@@ -29,7 +29,6 @@
+ } from './proxies';
+ import getResolveId from './resolve-id';
+ import { getRequireResolver } from './resolve-require-sources';
+-import validateVersion from './rollup-version';
+ import transformCommonjs from './transform-commonjs';
+ import { getName, getStrictRequiresFilter, normalizePathSlashes } from './utils';
+ 
+@@ -201,11 +200,7 @@
+     },
+ 
+     buildStart({ plugins }) {
+-      validateVersion(this.meta.rollupVersion, peerDependencies.rollup, 'rollup');
+       const nodeResolve = plugins.find(({ name }) => name === 'node-resolve');
+-      if (nodeResolve) {
+-        validateVersion(nodeResolve.version, '^13.0.6', '@rollup/plugin-node-resolve');
+-      }
+       if (options.namedExports != null) {
+         this.warn(
+           'The namedExports option from "@rollup/plugin-commonjs" is deprecated. Named exports are now handled automatically.'

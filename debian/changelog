@@ -1,3 +1,90 @@
+node-rollup-plugin-commonjs (25.0.4+ds1-1) unstable; urgency=medium
+
+  * Team upload
+  * Update excluded files
+  * New upstream version 25.0.4+ds1
+  * Update patches
+
+ -- Yadd <yadd@debian.org>  Tue, 15 Aug 2023 13:33:02 +0400
+
+node-rollup-plugin-commonjs (24.0.1+ds1-2) unstable; urgency=medium
+
+  * Team upload
+  * Back to unstable
+
+ -- Yadd <yadd@debian.org>  Sun, 16 Jul 2023 09:20:37 +0400
+
+node-rollup-plugin-commonjs (24.0.1+ds1-1) experimental; urgency=medium
+
+  * Team upload
+  * Update standards version to 4.6.2, no changes needed.
+  * New upstream version 24.0.1+ds1
+
+ -- Yadd <yadd@debian.org>  Mon, 03 Apr 2023 17:00:13 +0400
+
+node-rollup-plugin-commonjs (23.0.4+ds1-1) unstable; urgency=medium
+
+  * Team upload
+  * Update excluded list
+  * New upstream version 23.0.4+ds1
+  * Refresh patches
+
+ -- Yadd <yadd@debian.org>  Mon, 12 Dec 2022 18:19:44 +0100
+
+node-rollup-plugin-commonjs (23.0.0+ds1-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 23.0.0+ds1
+  * Update build: use @rollup/plugin-typescript
+  * Update test
+  * Add patch for rollup 2 (test are written for rollup 3)
+  * Install changelog
+
+ -- Yadd <yadd@debian.org>  Tue, 11 Oct 2022 14:13:56 +0200
+
+node-rollup-plugin-commonjs (22.0.2+ds1-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 22.0.2+ds1
+
+ -- Yadd <yadd@debian.org>  Mon, 08 Aug 2022 21:13:38 +0200
+
+node-rollup-plugin-commonjs (22.0.1+ds1-2) unstable; urgency=medium
+
+  * Team upload
+  * Don't validate rollup and @rollup/plugin-node-resolve versions
+
+ -- Yadd <yadd@debian.org>  Sat, 09 Jul 2022 12:56:38 +0200
+
+node-rollup-plugin-commonjs (22.0.1+ds1-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 22.0.1+ds1
+  * Update test
+
+ -- Yadd <yadd@debian.org>  Tue, 28 Jun 2022 09:08:17 +0200
+
+node-rollup-plugin-commonjs (21.0.1+repack-2) unstable; urgency=medium
+
+  * Team upload
+  * debian/copyright: use spaces rather than tabs to start continuation lines.
+  * Fix filenamemangle
+  * Declare compliance with policy 4.6.1
+  * Add missing test dependency to node-locate-character (Closes: #1011903)
+
+ -- Yadd <yadd@debian.org>  Fri, 27 May 2022 08:44:42 +0200
+
+node-rollup-plugin-commonjs (21.0.1+repack-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Refresh patches.
+  * Drop unused overrides.
+  * Tighten d/copyright for more aggressive repacking.
+  * Bump standards-version to 4.6.0.
+  * Refresh d/copyright.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sun, 28 Nov 2021 21:41:38 +0100
+
 node-rollup-plugin-commonjs (17.0.0+repack-2) unstable; urgency=medium
 
   * Team upload

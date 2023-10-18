@@ -1,23 +1,10 @@
 #!/usr/bin/make -f
 
-ifneq ($(filter pkg.node-rollup-plugin-commonjs.transpilebabel,$(DEB_BUILD_PROFILES)),)
-TRANSPILE_PROF?=babel7
-BABEL_PRESET?=env
-export BABEL_PRESET
-else ifneq ($(filter pkg.node-rollup-plugin-commonjs.transpilebuble,$(DEB_BUILD_PROFILES)),)
-TRANSPILE_PROF?=buble
-else ifneq ($(filter pkg.node-rollup-plugin-commonjs.transpilenone,$(DEB_BUILD_PROFILES)),)
-TRANSPILE_PROF?=none
-else
-TRANSPILE_PROF?=none
-endif
-TRANSPILE?=$(TRANSPILE_PROF)
-export TRANSPILE
-
-
 %:
-	echo "TRANSPILE $$TRANSPILE"
 	dh $@
 
 override_dh_auto_build:
 	cd packages/commonjs && rollup -c
+
+override_dh_installchangelogs:
+	dh_installchangelogs packages/commonjs/CHANGELOG.md

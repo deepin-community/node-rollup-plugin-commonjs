@@ -60,18 +60,21 @@ export function getKeypath(node) {
 
 export const KEY_COMPILED_ESM = '__esModule';
 
-export function isDefineCompiledEsm(node) {
+export function getDefineCompiledEsmType(node) {
+  const definedPropertyWithExports = getDefinePropertyCallName(node, 'exports');
   const definedProperty =
-    getDefinePropertyCallName(node, 'exports') || getDefinePropertyCallName(node, 'module.exports');
+    definedPropertyWithExports || getDefinePropertyCallName(node, 'module.exports');
   if (definedProperty && definedProperty.key === KEY_COMPILED_ESM) {
-    return isTruthy(definedProperty.value);
+    return isTruthy(definedProperty.value)
+      ? definedPropertyWithExports
+        ? 'exports'
+        : 'module'
+      : false;
   }
   return false;
 }
 
 function getDefinePropertyCallName(node, targetName) {
-  const targetNames = targetName.split('.');
-
   const {
     callee: { object, property }
   } = node;
@@ -79,6 +82,7 @@ function getDefinePropertyCallName(node, targetName) {
   if (!property || property.type !== 'Identifier' || property.name !== 'defineProperty') return;
   if (node.arguments.length !== 3) return;
 
+  const targetNames = targetName.split('.');
   const [target, key, value] = node.arguments;
   if (targetNames.length === 1) {
     if (target.type !== 'Identifier' || target.name !== targetNames[0]) {
@@ -105,13 +109,20 @@ function getDefinePropertyCallName(node, targetName) {
   return { key: key.value, value: valueProperty.value };
 }
 
-export function isLocallyShadowed(name, scope) {
-  while (scope.parent) {
-    if (scope.declarations[name]) {
+export function isShorthandProperty(parent) {
+  return parent && parent.type === 'Property' && parent.shorthand;
+}
+
+export function hasDefineEsmProperty(node) {
+  return node.properties.some((property) => {
+    if (
+      property.type === 'Property' &&
+      property.key.type === 'Identifier' &&
+      property.key.name === '__esModule' &&
+      isTruthy(property.value)
+    ) {
       return true;
     }
-    // eslint-disable-next-line no-param-reassign
-    scope = scope.parent;
-  }
-  return false;
+    return false;
+  });
 }
